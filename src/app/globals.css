@@ -1,7 +1,4 @@
-/* Move @import statement to the very top */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-
-/* Tailwind directives should come after the @import */
+/* Tailwind directives should come first */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,18 +17,10 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("/path-to-your-font-files/Inter-Regular.woff2") format("woff2"),
-    url("/path-to-your-font-files/Inter-Regular.woff") format("woff");
+  src: url("/fonts/Inter_18pt-Regular.ttf") format("ttf"),
+    url("/fonts/Inter_18pt-Regular.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("/path-to-your-font-files/Inter-Bold.woff2") format("woff2"),
-    url("/path-to-your-font-files/Inter-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: bold;
 }
 
 body {
