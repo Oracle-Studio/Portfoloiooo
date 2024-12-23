@@ -116,7 +116,7 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      {/* Projects Section */}
+      {/* Projects dSection */}
       <section id="portfolio" className="max-w-6xl mt-4">
         <div className="grid grid-cols-1 gap-4 sm:gap-12">
           {" "}
