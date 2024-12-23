@@ -118,33 +118,33 @@ export default function Portfolio() {
 
       {/* Projects Section */}
       <section id="portfolio" className="max-w-6xl mt-4">
-        <div className="grid grid-cols-1  ">
+        <div className="grid grid-cols-1 gap-4 sm:gap-12">
           {" "}
-          {/* Set no gap */}
+          {/* Add gap only for desktop */}
           {projects.map((project, index) => (
             <div
               key={index}
-              className="grid grid-cols-12 bg-black -mb-44 gap-5  rounded-2xl shadow-2xl mt-5"
+              className="grid grid-cols-12 gap-5 bg-black rounded-2xl shadow-2xl"
             >
               {/* Left Section: Image */}
-              <div className="col-span-6 bg-black rounded-2xl overflow-hidden">
+              <div className="col-span-6 bg-black rounded-2xl overflow-hidden sm:col-span-6 col-span-12">
                 <video
-                  src={project.video} // Use a "video" key in your project object
+                  src={project.video}
                   className="w-full h-[28rem] rounded-2xl object-cover"
                   autoPlay
                   loop
                   muted
-                  playsInline // Ensures autoplay works on mobile devices
+                  playsInline
                 ></video>
               </div>
 
               {/* Right Section: Content */}
-              <div className="col-span-6  gap-5  grid grid-rows-2">
+              <div className="col-span-6 sm:gap-8 gap-5 grid grid-rows-2 sm:grid-rows-none sm:col-span-6 col-span-12 flex flex-col sm:flex-none">
                 {/* Title and Description */}
-                <div className="bg-[#18181B] animate-card-Top p-5 rounded-2xl h-[20rem] flex flex-col justify-between">
+                <div className="bg-[#18181B] animate-card-Top p-5 rounded-2xl h-auto sm:h-[20rem] flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center  mb-6">
-                      <span className="text-4xl  text-gray-50 mr-3 p-3 bg-[#27272A] rounded-xl shadow-lg hover:bg-[#3a3a3d] hover:text-gray-300 hover:shadow-2xl transition duration-300">
+                    <div className="flex items-center mb-6">
+                      <span className="text-4xl text-gray-50 mr-3 p-3 bg-[#27272A] rounded-xl shadow-lg hover:bg-[#3a3a3d] hover:text-gray-300 hover:shadow-2xl transition duration-300">
                         <i className={project.logo}></i>
                       </span>
 
@@ -156,7 +156,7 @@ export default function Portfolio() {
                       {project.description}
                     </p>
                   </div>
-                  <div className="flex flex-wrap gap-5 mb-1 mt-4 ">
+                  <div className="flex flex-wrap gap-5 mb-1 mt-4">
                     {project.techStack.map((tech, index) => (
                       <div
                         key={index}
@@ -170,7 +170,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Buttons */}
-                <div className="grid grid-cols-2  gap-5 ">
+                <div className="grid grid-cols-2  sm:gap-8 gap-5">
                   <div className="bg-[#18181B] h-[6rem] rounded-2xl flex justify-center items-center animate-card-right">
                     <a
                       href={project.link}
