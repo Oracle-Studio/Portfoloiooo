@@ -1,0 +1,41 @@
+/* Move @import statement to the very top */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+/* Tailwind directives should come after the @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/path-to-your-font-files/Inter-Regular.woff2") format("woff2"),
+    url("/path-to-your-font-files/Inter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/path-to-your-font-files/Inter-Bold.woff2") format("woff2"),
+    url("/path-to-your-font-files/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: bold;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Inter", sans-serif;
+}
