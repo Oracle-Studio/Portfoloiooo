@@ -2,12 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation"; // Import usePathname
-import { Inter } from "next/font/google";
-
-const InterFont = Inter({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export default function Home() {
   const router = useRouter();
