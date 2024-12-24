@@ -35,7 +35,7 @@ export default function ResumePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#000000] text-[#e0e1dd] flex flex-col items-center gap-8 pt-[150px]">
+    <div className="min-h-screen bg-[#000000] text-[#e0e1dd] flex flex-col items-center gap-8 pt-[130px]">
       {/* Navbar */}
       <nav
         className={`fixed top-0 w-full flex justify-center py-7 z-50 transition-all duration-300 ${

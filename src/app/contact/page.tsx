@@ -37,7 +37,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-[#000000] text-[#e0e1dd] flex flex-col items-center gap-8 pt-[150px]">
+    <div className="min-h-screen bg-[#000000] text-[#e0e1dd] flex flex-col items-center gap-8 pt-[120px]">
       {/* Navbar */}
       <nav
         className={`fixed top-0 w-full flex justify-center py-7 z-50 transition-all duration-300 ${
@@ -68,7 +68,7 @@ export default function Contact() {
         className="flex flex-col items-center w-full max-w-4xl "
       >
         {/* Email and Social Links */}
-        <div className="hidden md:grid md:grid-cols-2 md:gap-6 w-full mt-24">
+        <div className="hidden md:grid md:grid-cols-2 md:gap-6 w-full mt-32">
           <a
             href="mailto:Mondherbenhajammar@gmail.com"
             aria-label="Envoyer un e-mail à Mondher Ben Haj Ammar"
@@ -173,12 +173,13 @@ export default function Contact() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="md:hidden flex flex-col items-center gap-5 w-full">
+        <div className="md:hidden p-5  flex flex-col items-center gap-5 w-full ">
+          {/* Email Card */}
           <a
             href="mailto:Mondherbenhajammar@gmail.com"
-            className="flex items-center justify-between bg-[#18181B] rounded-xl shadow-2xl py-4 px-6 hover:bg-gray-700 transition-all duration-300 ease-in-out w-full"
+            className="flex items-center bg-[#18181B] rounded-xl shadow-2xl py-6 px-6 hover:bg-gray-700 transition-all duration-300 ease-in-out w-full min-h-[120px]"
           >
-            <div className="flex items-center gap-4 overflow-hidden">
+            <div className="flex flex-col justify-center items-center w-full gap-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="36"
@@ -197,35 +198,14 @@ export default function Contact() {
             </div>
           </a>
 
-          <a
-            href="https://github.com/Mondher19"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between bg-[#18181B] rounded-xl shadow-2xl py-4 px-6 hover:bg-gray-700 transition-all duration-300 ease-in-out w-full"
-          >
-            <div className="flex items-center gap-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="36"
-                height="36"
-                fill="white"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z" />
-              </svg>
-              <p className="text-lg text-gray-300 font-semibold text-center">
-                GitHub: <br /> Mondher Ben haj ammar
-              </p>
-            </div>
-          </a>
-
+          {/* LinkedIn Card */}
           <a
             href="https://www.linkedin.com/in/mondher-ben-haj-ammar-a25312205/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between bg-[#18181B] rounded-xl shadow-2xl py-4 px-6 hover:bg-gray-700 transition-all duration-300 ease-in-out w-full"
+            className="flex items-center bg-[#18181B] rounded-xl shadow-2xl py-6 px-6 hover:bg-gray-700 transition-all duration-300 ease-in-out w-full min-h-[120px]"
           >
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col justify-center items-center w-full gap-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="36"
@@ -241,11 +221,12 @@ export default function Contact() {
             </div>
           </a>
 
+          {/* Phone Card */}
           <a
             href="tel:+21693699995"
-            className="flex items-center justify-between bg-[#18181B] rounded-xl shadow-2xl py-4 px-6 hover:bg-gray-700 transition-all duration-300 ease-in-out w-full"
+            className="flex items-center bg-[#18181B] rounded-xl shadow-2xl py-6 px-6 hover:bg-gray-700 transition-all duration-300 ease-in-out w-full min-h-[120px]"
           >
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col justify-center items-center w-full gap-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 28.314 28.323"
@@ -253,10 +234,36 @@ export default function Contact() {
                 height="36"
                 fill="white"
               >
-                <path d="M27.728 20.384l-4.242-4.242a1.982 1.982 0 0 0-1.413-.586c-.534 0-1.036.209-1.413.586l-2.828 2.828-8.485-8.485 2.828-2.828c.78-.78.78-2.05-.001-2.83L7.929.585A1.986 1.986 0 0 0 6.516 0c-.536 0-1.038.209-1.414.587L.858 4.83C.729 4.958-.389 6.168.142 8.827c.626 3.129 3.246 7.019 7.787 11.56 6.499 6.499 10.598 7.937 12.953 7.937 1.63 0 2.426-.689 2.604-.867l4.242-4.242c.378-.378.587-.881.586-1.416-.001-.534-.209-1.037-.586-1.415zm-5.656 5.658c-.028.028-3.409 2.249-12.729-7.07C-.178 9.452 2.276 6.243 2.272 6.244L6.515 2l4.243 4.244-3.535 3.535a.999.999 0 0 0 0 1.414l9.899 9.899a.999.999 0 0 0 1.414 0l3.535-3.536 4.243 4.244-4.242 4.242z" />
+                <path d="M27.728 20.384l-4.242-4.242a1.982 1.982 0 0 0-1.413-.586c-.534 0-1.036.209-1.413.586l-2.828 2.828-8.485-8.485 2.828-2.828c.78-.78.78-2.05-.001-2.83L7.929.585A1.986 1.986 0 0 0 6.516 0c-.536 0-1.038.209-1.414.587L.858 4.83C.729 4.958-.389 6.168.142 8.827c.626 3.129 3.246 7.019 7.787 11.56 6.499 6.499 10.598 7.937 12.953 7.937 1.63 0 2.426-.689 2.604-.867l4.242-4.242c.378-.378.587-.881.586-1.416-.001-.534-.209-1.037-.586-1.415zm-5.656 5.658c-.028.028-3.409 2.249-12.729-7.07C-.178 9.452 2.276 6.243 2.272 6.244L6.515 2l4.243 4.244-3.535 3.535a.999.999 0 0 0 0 1.414l9.899 9.899a.999.999 0 0 0 1.414 0l3.536-3.536 4.242 4.243-3.247 3.243z" />
+              </svg>
+              <p
+                className="text-lg text-gray-300 font-semibold text-center truncate"
+                title="+216 93 699 995"
+              >
+                +216 93 699 995
+              </p>
+            </div>
+          </a>
+
+          {/* GitHub Card */}
+          <a
+            href="https://github.com/Mondher19"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center bg-[#18181B] rounded-xl shadow-2xl py-6 px-6 hover:bg-gray-700 transition-all duration-300 ease-in-out w-full min-h-[120px]"
+          >
+            <div className="flex flex-col justify-center items-center w-full gap-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                fill="white"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z" />
               </svg>
               <p className="text-lg text-gray-300 font-semibold text-center">
-                Phone: <br /> (+216) 93 369 995
+                Mondher Ben Haj Ammar
               </p>
             </div>
           </a>
@@ -295,6 +302,7 @@ export default function Contact() {
           </div> */}
         </div>
       </section>
+
       {/* Tailwind Animations */}
       <style jsx>{`
         @keyframes slideInFromLeft {

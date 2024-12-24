@@ -114,7 +114,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#000000] text-[#e0e1dd] flex flex-col items-center gap-8 pt-[150px]">
+    <div className="min-h-screen bg-[#000000] text-[#e0e1dd] flex flex-col items-center gap-8 pt-[60px]">
       {/* Navbar */}
       <nav
         className={`fixed top-0 w-full flex justify-center py-7 z-50 transition-all duration-300 ${
@@ -141,9 +141,9 @@ export default function Portfolio() {
       </nav>
 
       {/* Projects Section */}
-      <section id="portfolio" className="max-w-6xl mt-4">
+      <section id="portfolio" className="max-w-6xl mt-32">
         {/* Desktop Layout */}
-        <div className="hidden md:grid grid-cols-1 gap-4 sm:gap-12">
+        <div className="hidden md:grid grid-cols-1 gap-4 sm:gap-24">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -239,7 +239,7 @@ export default function Portfolio() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="md:hidden flex flex-col gap-8">
+        <div className="md:hidden flex flex-col gap-14">
           {projects.map((project, index) => (
             <div key={index} className="bg-black rounded-2xl shadow-2xl p-4">
               {/* Logo and Title */}
