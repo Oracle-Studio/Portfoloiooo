@@ -94,6 +94,25 @@ export default function Portfolio() {
       comingSoon: true,
       logo: "devicon-nextjs-plain", // Replace with appropriate logo class or image path
     },
+    {
+      title: "My Portfolio Website ",
+      description:
+        "Built a responsive and interactive portfolio website using Next.js, JavaScript, and TypeScript, showcasing skills, projects, and achievements with optimized performance and modern design.",
+      techStack: [
+        { name: "nextjs", label: "Next.js" },
+        { name: "javascript", label: "JS" },
+        { name: "typescript", label: "TS" },
+      ],
+      image: "/Imagenature.webp",
+      link: "https://portfoloiooo-kappa.vercel.app/",
+      githubLink: "https://github.com/your-repo1",
+
+      video:
+        "https://dl.dropboxusercontent.com/scl/fi/0274z9e1f0a2kdra8gmc6/Videoprojectportfolio.mp4?rlkey=uqp6urt2p45qe3f86ksk67xp5&st=eghnmcqo&dl=0", // Path to the video file
+      post: "ProjetPortfolio.png",
+      comingSoon: false,
+      logo: "devicon-flutter-plain", // Replace with appropriate logo class or image path
+    },
 
     {
       title: " Java EE Leave Management Application",
@@ -206,11 +225,32 @@ export default function Portfolio() {
                       }`}
                     >
                       {project.comingSoon ? (
-                        <span className="text-gray-400 font-semibold text-lg">
+                        <p className="text-indigo-500 font-semibold text-center">
                           Coming Soon!
-                        </span>
+                        </p>
                       ) : (
-                        "Live Demo"
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex justify-center items-center bg-gray-500/20 hover:bg-gray-600 text-white py-2 px-4 rounded-md"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            className="w-5 h-5 mr-2"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M16.5 3.75a4.5 4.5 0 014.5 4.5v7.5a4.5 4.5 0 01-4.5 4.5h-9a4.5 4.5 0 01-4.5-4.5v-7.5a4.5 4.5 0 014.5-4.5h9zM8.25 12h7.5"
+                            />
+                          </svg>
+                          View Project
+                        </a>
                       )}
                     </a>
                   </div>
