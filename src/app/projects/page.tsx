@@ -34,8 +34,10 @@ export default function Portfolio() {
       image: "/Imagenature.webp",
       link: "https://example.com/project1",
       githubLink: "https://github.com/your-repo1",
-      video: "/projet1video.mp4", // Path to the video file
 
+      video:
+        "https://dl.dropboxusercontent.com/scl/fi/3jlgzfsg2tdecmo2eg5lk/Projet1video.mp4?rlkey=kib3yu3cbhxt506slz2j9v9wh&st=3shcvg86&dl=0", // Path to the video file
+      post: "Projet1post.png",
       comingSoon: true,
       logo: "devicon-flutter-plain", // Replace with appropriate logo class or image path
     },
@@ -50,8 +52,9 @@ export default function Portfolio() {
         { name: "javascript", label: "JS" },
         { name: "typescript", label: "TS" },
       ],
-      video: "/projectvideo2.mp4", // Path to the video file
-
+      video:
+        "https://dl.dropboxusercontent.com/scl/fi/d28wv2my7lb23ba1h94hq/Projectvideo2.mp4?rlkey=w892obf4qmevuhnru4e2tm2ey&st=9bx72xtl&dl=0", // Path to the video file
+      post: "Projet2post.png",
       image: "/photo.webp",
       link: "https://taxisfreressok.com/",
       githubLink: "https://github.com/your-repo2",
@@ -73,7 +76,9 @@ export default function Portfolio() {
       image: "/Imagenature.webp",
       link: "https://example.com/project1",
       githubLink: "https://github.com/your-repo1",
-      video: "/projetvideo3.mp4", // Path to the video file
+      video:
+        "https://dl.dropboxusercontent.com/scl/fi/9m3esokk0xze8e1lhqwns/Projetvideo3.mp4?rlkey=2aru58u7s2jkx9x3x9nhuc8pq&st=sghqx1vw&dl=0", // Path to the video file
+      post: "/Projet3post.png",
 
       comingSoon: true,
       logo: "devicon-nextjs-plain", // Replace with appropriate logo class or image path
@@ -87,7 +92,9 @@ export default function Portfolio() {
       image: "/Imagenature.webp",
       link: "https://example.com/project1",
       githubLink: "https://github.com/your-repo1",
-      video: "/project4.mp4", // Path to the video file
+      video:
+        "https://dl.dropboxusercontent.com/scl/fi/qbwvdzn34izdx5860c1vh/Project4.mp4?rlkey=78pw7g158j5k52oaaqew6887k&st=78tuv6d2&dl=0", // Path to the video file
+      post: "Projet4post.png",
 
       comingSoon: true,
       logo: "devicon-java-plain",
@@ -116,7 +123,7 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      {/* Projects dSection */}
+      {/* Projects Section */}
       <section id="portfolio" className="max-w-6xl mt-4">
         <div className="grid grid-cols-1 gap-4 sm:gap-12">
           {" "}
@@ -135,6 +142,7 @@ export default function Portfolio() {
                   loop
                   muted
                   playsInline
+                  poster={project.post} // Replace with your thumbnail image URL
                 ></video>
               </div>
 
