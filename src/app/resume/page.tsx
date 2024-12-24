@@ -106,14 +106,14 @@ export default function ResumePage() {
         </div>
 
         {/* Mobile Buttons */}
-        <div className="flex gap-4">
-          {/* View Full Screen Button */}
+        <div className="flex flex-wrap justify-center gap-4 mt-6">
+          {/* Full Screen Button */}
           <button
             onClick={toggleFullScreen}
-            className="flex items-center gap-2 bg-blue-600 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300"
+            className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 px-6 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300"
           >
-            <FaExpand className="text-lg" />
-            <span>View Full Screen</span>
+            <FaExpand className="text-xl" />
+            <span className="text-sm font-semibold">Full Screen</span>
           </button>
 
           {/* View Button */}
@@ -121,20 +121,20 @@ export default function ResumePage() {
             href="/Cv_Mondherbenhajammar.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-gray-600 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-gray-700 transition-all duration-300"
+            className="flex items-center gap-2 bg-gradient-to-r from-gray-600 to-gray-800 text-white py-3 px-6 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300"
           >
-            <FaEye className="text-lg" />
-            <span>View</span>
+            <FaEye className="text-xl" />
+            <span className="text-sm font-semibold">View</span>
           </a>
 
           {/* Download Button */}
           <a
             href="/Cv_Mondherbenhajammar.pdf"
             download
-            className="flex items-center gap-2 bg-green-600 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300"
+            className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 px-6 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300"
           >
-            <FaDownload className="text-lg" />
-            <span>Download</span>
+            <FaDownload className="text-xl" />
+            <span className="text-sm font-semibold">Download</span>
           </a>
         </div>
       </section>
