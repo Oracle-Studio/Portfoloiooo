@@ -85,7 +85,7 @@ export default function ResumePage() {
           {showFullScreen ? (
             <div className="fixed top-0 left-0 w-full h-full bg-black z-50 flex justify-center items-center">
               <iframe
-                src="/Cv_Mondherbenhajammar.pdf"
+                src="/Resume_Mondherbenhajammar.pdf"
                 className="w-full h-full border-none"
                 title="Resume"
               />
@@ -98,7 +98,7 @@ export default function ResumePage() {
             </div>
           ) : (
             <iframe
-              src="/Cv_Mondherbenhajammar.pdf"
+              src="/Resume_Mondherbenhajammar.pdf"
               className="w-full h-full border-none"
               title="Resume"
             />
@@ -118,7 +118,7 @@ export default function ResumePage() {
 
           {/* View Button */}
           <a
-            href="/Cv_Mondherbenhajammar.pdf"
+            href="/Resume_Mondherbenhajammar.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-gradient-to-r from-gray-600 to-gray-800 text-white py-3 px-6 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300"
@@ -129,7 +129,7 @@ export default function ResumePage() {
 
           {/* Download Button */}
           <a
-            href="/Cv_Mondherbenhajammar.pdf"
+            href="/Resume_Mondherbenhajammar.pdf"
             download
             className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 px-6 rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300"
           >
