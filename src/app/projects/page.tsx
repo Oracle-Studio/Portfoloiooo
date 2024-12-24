@@ -125,16 +125,15 @@ export default function Portfolio() {
 
       {/* Projects Section */}
       <section id="portfolio" className="max-w-6xl mt-4">
-        <div className="grid grid-cols-1 gap-4 sm:gap-12">
-          {" "}
-          {/* Add gap only for desktop */}
+        {/* Desktop Layout */}
+        <div className="hidden md:grid grid-cols-1 gap-4 sm:gap-12">
           {projects.map((project, index) => (
             <div
               key={index}
               className="grid grid-cols-12 gap-5 bg-black rounded-2xl shadow-2xl"
             >
-              {/* Left Section: Image */}
-              <div className="col-span-6 bg-black rounded-2xl overflow-hidden sm:col-span-6 col-span-12">
+              {/* Left Section: Video */}
+              <div className="col-span-6 bg-black rounded-2xl overflow-hidden">
                 <video
                   src={project.video}
                   className="w-full h-[28rem] rounded-2xl object-cover"
@@ -142,12 +141,12 @@ export default function Portfolio() {
                   loop
                   muted
                   playsInline
-                  poster={project.post} // Replace with your thumbnail image URL
+                  poster={project.post}
                 ></video>
               </div>
 
               {/* Right Section: Content */}
-              <div className="col-span-6 sm:gap-8 gap-5 grid grid-rows-2 sm:grid-rows-none sm:col-span-6 col-span-12 flex flex-col sm:flex-none">
+              <div className="col-span-6 flex flex-col gap-5">
                 {/* Title and Description */}
                 <div className="bg-[#18181B] animate-card-Top p-5 rounded-2xl h-auto sm:h-[20rem] flex flex-col justify-between">
                   <div>
@@ -155,7 +154,6 @@ export default function Portfolio() {
                       <span className="text-4xl text-gray-50 mr-3 p-3 bg-[#27272A] rounded-xl shadow-lg hover:bg-[#3a3a3d] hover:text-gray-300 hover:shadow-2xl transition duration-300">
                         <i className={project.logo}></i>
                       </span>
-
                       <h3 className="text-3xl font-bold font-[Inter]">
                         {project.title}
                       </h3>
@@ -178,7 +176,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Buttons */}
-                <div className="grid grid-cols-2  sm:gap-8 gap-5">
+                <div className="grid grid-cols-2 gap-5">
                   <div className="bg-[#18181B] h-[6rem] rounded-2xl flex justify-center items-center animate-card-right">
                     <a
                       href={project.link}
@@ -191,48 +189,65 @@ export default function Portfolio() {
                       }`}
                     >
                       {project.comingSoon ? (
-                        <span className="text-gray-400 font-semibold text-lg animate-card-right">
+                        <span className="text-gray-400 font-semibold text-lg">
                           Coming Soon!
                         </span>
                       ) : (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="icon icon-tabler icon-tabler-link"
-                          viewBox="0 0 24 24"
-                          strokeWidth="2"
-                          stroke="#ffffff"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          width="46"
-                          height="46"
-                        >
-                          <path
-                            stroke="none"
-                            d="M0 0h24v24H0z"
-                            fill="none"
-                          ></path>
-                          <path d="M9 15l6 -6"></path>
-                          <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
-                          <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
-                        </svg>
+                        "Live Demo"
                       )}
                     </a>
                   </div>
-                  <div className="bg-[#18181B] p-6 rounded-2xl flex justify-center items-center h-[6rem] animate-card-right">
-                    <svg
+                  <div className="bg-[#18181B] p-6 rounded-2xl flex justify-center items-center h-[6rem]">
+                    <a
                       href={project.githubLink}
-                      role="img"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      fill="#ffffff"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <title>GitHub</title>
-                      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
-                    </svg>
+                      <svg
+                        role="img"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="50"
+                        fill="#ffffff"
+                      >
+                        <title>GitHub</title>
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+                      </svg>
+                    </a>
                   </div>
                 </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="md:hidden flex flex-col gap-8">
+          {projects.map((project, index) => (
+            <div key={index} className="bg-black rounded-2xl shadow-2xl p-4">
+              <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+              <video
+                src={project.video}
+                className="w-full rounded-2xl mb-4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster={project.post}
+              ></video>
+              <p className="text-lg text-gray-400 leading-relaxed mb-4">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-3 mb-4">
+                {project.techStack.map((tech, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-700 text-gray-300 text-sm font-medium py-1 px-2 rounded-full"
+                  >
+                    <i className={`devicon-${tech.name}-plain text-lg`}></i>
+                    <span>{tech.label}</span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
