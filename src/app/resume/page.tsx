@@ -1,37 +1,55 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useRouter, usePathname } from "next/navigation"; // Import usePathname
+import { useRouter, usePathname } from "next/navigation";
 import { Inter } from "next/font/google";
+import { FaDownload, FaEye, FaExpand } from "react-icons/fa"; // Import icons
 
 const InterFont = Inter({
   subsets: ["latin"],
   weight: "400",
 });
+
 export default function ResumePage() {
   const router = useRouter();
-  const pathname = usePathname(); // Get the current pathname
+  const pathname = usePathname();
   const [activeItem, setActiveItem] = useState("");
-  const [isScrolled, setIsScrolled] = useState(false); // Track if the page is scrolled
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // Track if the device is mobile
+  const [showFullScreen, setShowFullScreen] = useState(false); // Track full-screen mode
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Set to true if scrolled down > 50px
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Set mobile status based on screen width
     };
 
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    // Initialize the mobile status on mount
+    handleResize();
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
-  // Update activeItem when the path changes
+
   useEffect(() => {
-    setActiveItem(pathname); // Update active item based on pathname
+    setActiveItem(pathname);
   }, [pathname]);
 
   const handleNavigation = (path: string) => {
-    setActiveItem(path); // Update active item when a menu is clicked
-    router.push(path); // Navigate to the clicked menu item path
+    setActiveItem(path);
+    router.push(path);
+  };
+
+  const toggleFullScreen = () => {
+    setShowFullScreen(!showFullScreen); // Toggle full-screen mode
   };
 
   return (
@@ -62,13 +80,62 @@ export default function ResumePage() {
       </nav>
 
       {/* Resume Section */}
-      <section className="w-full flex-grow flex justify-center items-center">
-        <div className="w-full  h-[85vh] md:h-[90vh]">
-          <iframe
-            src="/Cv_Mondherbenhajammar.pdf"
-            className="w-full h-full border-none"
-            title="Resume"
-          />
+      <section className="w-full flex-grow flex flex-col justify-center items-center gap-4">
+        <div className="w-full h-[85vh] md:h-[90vh]">
+          {showFullScreen ? (
+            <div className="fixed top-0 left-0 w-full h-full bg-black z-50 flex justify-center items-center">
+              <iframe
+                src="/Cv_Mondherbenhajammar.pdf"
+                className="w-full h-full border-none"
+                title="Resume"
+              />
+              <button
+                onClick={toggleFullScreen}
+                className="absolute top-5 right-5 bg-red-600 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-red-700 transition-all duration-300"
+              >
+                Close Full Screen
+              </button>
+            </div>
+          ) : (
+            <iframe
+              src="/Cv_Mondherbenhajammar.pdf"
+              className="w-full h-full border-none"
+              title="Resume"
+            />
+          )}
+        </div>
+
+        {/* Mobile Buttons */}
+        <div className="flex gap-4">
+          {/* View Full Screen Button */}
+          <button
+            onClick={toggleFullScreen}
+            className="flex items-center gap-2 bg-blue-600 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300"
+          >
+            <FaExpand className="text-lg" />
+            <span>View Full Screen</span>
+          </button>
+
+          {/* View Button */}
+          <a
+            href="/Cv_Mondherbenhajammar.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-gray-600 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-gray-700 transition-all duration-300"
+          >
+            <FaEye className="text-lg" />
+            <span>View</span>
+          </a>
+
+          {/* Download Button */}
+          <a
+            href="/Cv_Mondherbenhajammar.pdf"
+            download
+            className="flex items-center gap-2 bg-green-600 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300"
+          >
+            <FaDownload className="text-lg" />
+            <span>Download</span>
+          </a>
         </div>
       </section>
     </div>
