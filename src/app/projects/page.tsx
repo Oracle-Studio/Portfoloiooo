@@ -225,7 +225,15 @@ export default function Portfolio() {
         <div className="md:hidden flex flex-col gap-8">
           {projects.map((project, index) => (
             <div key={index} className="bg-black rounded-2xl shadow-2xl p-4">
-              <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+              {/* Logo and Title */}
+              <div className="flex items-center mb-6">
+                <span className="text-4xl text-gray-50 mr-3 p-3 bg-[#27272A] rounded-xl shadow-lg">
+                  <i className={project.logo}></i>
+                </span>
+                <h3 className="text-2xl font-bold">{project.title}</h3>
+              </div>
+
+              {/* Video */}
               <video
                 src={project.video}
                 className="w-full rounded-2xl mb-4"
@@ -235,19 +243,26 @@ export default function Portfolio() {
                 playsInline
                 poster={project.post}
               ></video>
-              <p className="text-lg text-gray-400 leading-relaxed mb-4">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-3 mb-4">
-                {project.techStack.map((tech, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-700 text-gray-300 text-sm font-medium py-1 px-2 rounded-full"
-                  >
-                    <i className={`devicon-${tech.name}-plain text-lg`}></i>
-                    <span>{tech.label}</span>
-                  </div>
-                ))}
+
+              {/* Description and Technologies */}
+              <div className="bg-[#18181B] p-4 rounded-xl shadow-lg">
+                {/* Description */}
+                <p className="text-lg text-gray-400 leading-relaxed mb-4">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-3">
+                  {project.techStack.map((tech, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-700 text-gray-300 text-sm font-medium py-1 px-2 rounded-full"
+                    >
+                      <i className={`devicon-${tech.name}-plain text-lg`}></i>
+                      <span>{tech.label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
