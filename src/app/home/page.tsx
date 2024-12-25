@@ -238,18 +238,9 @@ export default function Home() {
 
           {/* About Section */}
           <div className="bg-[#18181B] p-6 rounded-xl shadow-lg">
-            <h1 className="text-4xl font-bold mb-4">Who am I?</h1>
+            <h1 className="text-4xl font-bold mb-4"> {t.about.whoAmI} ?</h1>
             <p className="text-gray-400 leading-relaxed text-lg">
-              I’m Mondher ben haj ammar, a technology enthusiast with a passion
-              for tackling complex problems through innovative solutions. With
-              hands-on experience in programming, software development, and data
-              structures, I’ve built a strong foundation in creating scalable
-              systems. My journey has been shaped by projects, hackathons, and
-              internships, fueling my interest in the real-world impact of
-              technology. I thrive in collaborative environments, embrace
-              challenges, and stay ahead of emerging trends, driven by a
-              commitment to making a meaningful impact and leading technological
-              transformation.
+              {t.about.description}
             </p>
           </div>
 
