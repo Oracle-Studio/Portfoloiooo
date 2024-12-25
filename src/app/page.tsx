@@ -1,19 +1,20 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+
 import { useRouter, usePathname } from "next/navigation"; // Import usePathname
+import enTranslations from "../app/locales/en/common.json";
+import frTranslations from "../app/locales/fr/common.json";
 
 export default function Home() {
   const router = useRouter();
   const pathname = usePathname(); // Get the current pathname
   const [isScrolled, setIsScrolled] = useState(false); // Track if the page is scrolled
-
   const [activeItem, setActiveItem] = useState("");
+  const locale = pathname.split("/")[1] || "en";
+  const t = locale === "fr" ? frTranslations : enTranslations;
 
   // Update activeItem when the path changes
-  useEffect(() => {
-    setActiveItem(pathname); // Update active item based on pathname
-  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,19 +75,11 @@ export default function Home() {
             }`}
           >
             <h1 className="text-4xl font-[Inter] pt-5 pr-5 pl-5 font-bold">
-              Who am I?
+              {t.about.whoAmI}
+              {/* Assuming "who_am_i" exists in your translation files */}
             </h1>
             <p className="pt-3 pr-5 pl-5 text-lg text-gray-400 leading-relaxed">
-              I’m Mondher ben haj ammar, a technology enthusiast with a passion
-              for tackling complex problems through innovative solutions. With
-              hands-on experience in programming, software development, and data
-              structures, I’ve built a strong foundation in creating scalable
-              systems. My journey has been shaped by projects, hackathons, and
-              internships, fueling my interest in the real-world impact of
-              technology. I thrive in collaborative environments, embrace
-              challenges, and stay ahead of emerging trends, driven by a
-              commitment to making a meaningful impact and leading technological
-              transformation.
+              {t.about.description} {/* Dynamic text from translations */}
             </p>
           </div>
 

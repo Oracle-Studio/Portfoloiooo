@@ -1,0 +1,40 @@
+{
+  "navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "about": {
+    "whoAmI": "Who am I?",
+    "description": "I’m Mondher ben haj ammar, a technology enthusiast with a passion for tackling complex problems through innovative solutions. With hands-on experience in programming, software development, and data structures, I’ve built a strong foundation in creating scalable systems. My journey has been shaped by projects, hackathons, and internships, fueling my interest in the real-world impact of technology. I thrive in collaborative environments, embrace challenges, and stay ahead of emerging trends, driven by a commitment to making a meaningful impact and leading technological transformation."
+  },
+  "title": {
+    "fullStackDeveloper": "Full Stack Developer",
+    "education": "Education",
+    "technologies": "Technologies I have worked with",
+    "thinkBuildOptimize": "Think\nBuild\nOptimize"
+  },
+  "education": {
+    "esprit": {
+      "name": "ESPRIT: Private Higher School of Engineering and Technologies",
+      "period": "(2021-2024)",
+      "degree": "National Engineering Degree in Computer Science"
+    },
+    "fesmt": {
+      "name": "Faculty of Economic Sciences and Management of Tunis",
+      "period": "(2018-2021)",
+      "degree": "Bachelor of Science in Management Information Systems"
+    }
+  },
+  "technologies": {
+    "flutter": "Flutter",
+    "nextjs": "Next.js",
+    "nodejs": "Node.js",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "tailwindcss": "Tailwind CSS",
+    "firebase": "Firebase",
+    "mongodb": "MongoDB"
+  }
+}
