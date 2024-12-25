@@ -4,19 +4,19 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const { nextUrl } = request;
 
-  // Get the Accept-Language header from the request
+  // Extract the "Accept-Language" header from the user's request
   const acceptLanguage = request.headers.get("accept-language");
-  const userLanguage = acceptLanguage?.split(",")[0]?.split("-")[0]; // e.g., "en"
+  const userLanguage = acceptLanguage?.split(",")[0]?.split("-")[0]; // e.g., 'en'
 
   const supportedLocales = ["en", "fr"]; // Define supported locales
   const defaultLocale = "en"; // Default fallback language
 
-  // Determine the locale to use
+  // Determine the appropriate locale
   const locale = supportedLocales.includes(userLanguage || "")
     ? userLanguage
     : defaultLocale;
 
-  // Redirect if the locale is not part of the current URL
+  // If the locale is not already in the URL, redirect to the correct locale
   if (!nextUrl.pathname.startsWith(`/${locale}`)) {
     return NextResponse.redirect(
       new URL(`/${locale}${nextUrl.pathname}`, request.url)
@@ -26,7 +26,7 @@ export function middleware(request: NextRequest) {
   return NextResponse.next();
 }
 
-// Apply middleware to all routes except static assets
+// Apply middleware to all routes except static files and API routes
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|api/).*)"],
 };
