@@ -83,7 +83,7 @@ export default function Home() {
               {t.about.whoAmI}
               {/* Assuming "who_am_i" exists in your translation files */}
             </h1>
-            <p className="pt-3 pr-5 pl-5 text-lg text-gray-400 leading-relaxed">
+            <p className="pt-3 pr-5 pl-5 text-lg text-gray-400 leading-relaxed text-justify">
               {t.about.description} {/* Dynamic text from translations */}
             </p>
           </div>
