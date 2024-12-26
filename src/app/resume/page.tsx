@@ -19,8 +19,23 @@ export default function ResumePage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false); // Track if the device is mobile
   const [showFullScreen, setShowFullScreen] = useState(false); // Track full-screen mode
-  const locale = pathname.split("/")[1] || "en";
+  const [locale, setLocale] = useState<string>("en"); // Default to English
+
   const t = locale === "fr" ? frTranslations : enTranslations;
+
+  useEffect(() => {
+    // Detect user's language
+    const userLanguage = navigator.language; // Use navigator.language for modern browsers
+    const detectedLocale = userLanguage.startsWith("fr") ? "fr" : "en";
+
+    // Set locale based on detection
+    setLocale(detectedLocale);
+
+    // Redirect to the detected language route if not already on it
+    if (!window.location.pathname.startsWith(`/${detectedLocale}`)) {
+      router.push(`/${detectedLocale}`);
+    }
+  }, [router]);
 
   useEffect(() => {
     const handleScroll = () => {

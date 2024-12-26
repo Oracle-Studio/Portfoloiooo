@@ -17,8 +17,24 @@ export default function Contact() {
 
   const [isScrolled, setIsScrolled] = useState(false); // Track if the page is scrolled
 
-  const locale = pathname.split("/")[1] || "en";
+  const [locale, setLocale] = useState<string>("en"); // Default to English
+
   const t = locale === "fr" ? frTranslations : enTranslations;
+  useEffect(() => {
+    // Detect user's language
+    const userLanguage = navigator.language; // Use navigator.language for modern browsers
+    const detectedLocale = userLanguage.startsWith("fr") ? "fr" : "en";
+
+    // Redirect to the detected language route if not already on it
+    const currentPathLocale = window.location.pathname.split("/")[1]; // Get the locale from the current path
+    if (currentPathLocale !== detectedLocale) {
+      router.push(
+        `/${detectedLocale}${window.location.pathname.substring(
+          currentPathLocale.length + 4
+        )}`
+      );
+    }
+  }, [router]);
 
   useEffect(() => {
     const handleScroll = () => {
