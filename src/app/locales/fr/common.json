@@ -1,17 +1,24 @@
 {
+  "Resume": {
+    "View": "Voir le CV",
+    "Download": "Télécharger le CV"
+  },
+
   "navbar": {
     "home": "Accueil",
     "projects": "Projets",
-    "resume": "CV",
+    "resume": "Curriculum vitae",
     "contact": "Contact"
   },
+  "contactGithub": "Trouvez d'autres de mes dépôts",
+  "cvRep": "/Cv_Mondherbenhajammar.pdf",
   "about": {
     "whoAmI": "Qui suis-je ?",
-    "description": "Je suis Mondher ben haj ammar, un passionné de technologie avec une volonté de résoudre des problèmes complexes grâce à des solutions innovantes. Avec une expérience pratique en programmation, développement logiciel et structures de données, j'ai construit une base solide pour créer des systèmes évolutifs. Mon parcours a été façonné par des projets, des hackathons et des stages, alimentant mon intérêt pour l'impact réel de la technologie. Je m'épanouis dans des environnements collaboratifs, je relève les défis et je reste à l'avant-garde des tendances émergentes, motivé par un engagement à avoir un impact significatif et à conduire la transformation technologique."
+    "description": "Je suis Mondher ben haj ammar, un passionné de technologie avec un intérêt marqué pour résoudre des problèmes complexes grâce à des solutions innovantes. Fort d’une expérience pratique en programmation, développement logiciel et structures de données, j’ai construit une solide base pour créer des systèmes évolutifs. Mon parcours a été façonné par des projets, des hackathons et des stages, nourrissant mon intérêt pour l’impact réel de la technologie. J’évolue dans des environnements collaboratifs, relève les défis avec enthousiasme et reste à l’avant-garde des tendances émergentes, animé par l’ambition d’avoir un impact significatif et de conduire la transformation technologique."
   },
   "title": {
     "fullStackDeveloper": "Développeur Full Stack",
-    "education": "Éducation",
+    "education": "Formation",
     "technologies": "Technologies avec lesquelles j'ai travaillé",
     "thinkBuildOptimize": "Penser\nConstruire\nOptimiser"
   },
@@ -36,5 +43,91 @@
     "tailwindcss": "Tailwind CSS",
     "firebase": "Firebase",
     "mongodb": "MongoDB"
-  }
+  },
+  "projects": [
+    {
+      "name": "Application Mobile de Location Immobilière Madidou",
+      "description": "Développement d'une plateforme sécurisée et innovante pour la location immobilière utilisant Flutter, Node.js et Firebase. Conception d'interfaces utilisateur, développement backend et déploiement cloud pour garantir évolutivité et fiabilité.",
+      "techStack": [
+        { "name": "flutter", "label": "Flutter" },
+        { "name": "nodejs", "label": "Node.js" },
+        { "name": "firebase", "label": "Firebase" },
+        { "name": "javascript", "label": "JS" },
+        { "name": "typescript", "label": "TS" }
+      ],
+      "image": "/Imagenature.webp",
+      "link": "https://example.com/project1",
+      "githubLink": "https://github.com/your-repo1",
+      "video": "https://dl.dropboxusercontent.com/scl/fi/3jlgzfsg2tdecmo2eg5lk/Projet1video.mp4?rlkey=kib3yu3cbhxt506slz2j9v9wh&st=3shcvg86&dl=0",
+      "post": "Projet1post.png",
+      "comingSoon": true,
+      "logo": "devicon-flutter-plain"
+    },
+    {
+      "name": "Système de Gestion des Chauffeurs Taxis Freressok",
+      "description": "Taxis Freressok est une plateforme de gestion des chauffeurs utilisant Next.js, Node.js, Firebase et Twilio. Elle optimise les opérations grâce à des notifications en temps réel, la gestion des courses et une authentification sécurisée, garantissant efficacité et évolutivité.",
+      "techStack": [
+        { "name": "nextjs", "label": "Next.js" },
+        { "name": "nodejs", "label": "Node.js" },
+        { "name": "firebase", "label": "Firebase" },
+        { "name": "javascript", "label": "JS" },
+        { "name": "typescript", "label": "TS" }
+      ],
+      "image": "/photo.webp",
+      "link": "https://taxisfreressok.com/",
+      "githubLink": "https://github.com/your-repo2",
+      "video": "https://dl.dropboxusercontent.com/scl/fi/d28wv2my7lb23ba1h94hq/Projectvideo2.mp4?rlkey=w892obf4qmevuhnru4e2tm2ey&st=9bx72xtl&dl=0",
+      "post": "Projet2post.png",
+      "comingSoon": false,
+      "logo": "devicon-nextjs-plain"
+    },
+    {
+      "name": "Plateforme Mobile DevOps",
+      "description": "Création d'une plateforme mobile pour l'intégration et le déploiement continus (CI/CD) des applications en utilisant React.js, Node.js et GitHub Actions. Axée sur l'automatisation des processus, les tests et la documentation pour la maintenance et les mises à jour futures.",
+      "techStack": [
+        { "name": "nextjs", "label": "Next.js" },
+        { "name": "nodejs", "label": "Node.js" },
+
+        { "name": "javascript", "label": "JS" },
+        { "name": "typescript", "label": "TS" }
+      ],
+      "image": "/Imagenature.webp",
+      "link": "https://example.com/project3",
+      "githubLink": "https://github.com/your-repo3",
+      "video": "https://dl.dropboxusercontent.com/scl/fi/9m3esokk0xze8e1lhqwns/Projetvideo3.mp4?rlkey=2aru58u7s2jkx9x3x9nhuc8pq&st=sghqx1vw&dl=0",
+      "post": "Projet3post.png",
+      "comingSoon": true,
+      "logo": "devicon-react-original"
+    },
+    {
+      "name": "Mon Site Web Portfolio",
+      "description": "Création d'un site portfolio interactif et responsive utilisant Next.js, JavaScript et TypeScript. Le site met en valeur les compétences, projets et réalisations avec une conception moderne et des performances optimisées.",
+      "techStack": [
+        { "name": "nextjs", "label": "Next.js" },
+
+        { "name": "javascript", "label": "JS" },
+        { "name": "typescript", "label": "TS" }
+      ],
+      "image": "/Imagenature.webp",
+      "link": "https://portfoloiooo-kappa.vercel.app/",
+      "githubLink": "https://github.com/your-repo4",
+      "video": "https://dl.dropboxusercontent.com/scl/fi/0274z9e1f0a2kdra8gmc6/Videoprojectportfolio.mp4?rlkey=uqp6urt2p45qe3f86ksk67xp5&st=eghnmcqo&dl=0",
+      "post": "ProjetPortfolio.png",
+      "comingSoon": false,
+      "logo": "devicon-nextjs-plain"
+    },
+    {
+      "name": "Application de Gestion des Congés Java EE",
+      "description": "Développement d'une application pour gérer les demandes de congés, les approbations et le suivi en utilisant Java EE et JavaServer Faces (JSF). Travail sur la conception de l'interface utilisateur, la logique backend et la formation des utilisateurs pour l'adoption du système.",
+      "techStack": [{ "name": "java", "label": "Java EE" }],
+
+      "image": "/Imagenature.webp",
+      "link": "https://example.com/project5",
+      "githubLink": "https://github.com/your-repo5",
+      "video": "https://dl.dropboxusercontent.com/scl/fi/qbwvdzn34izdx5860c1vh/Project4.mp4?rlkey=78pw7g158j5k52oaaqew6887k&st=78tuv6d2&dl=0",
+      "post": "Projet4post.png",
+      "comingSoon": true,
+      "logo": "devicon-java-plain"
+    }
+  ]
 }

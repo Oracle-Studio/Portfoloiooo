@@ -48,17 +48,17 @@ export default function Home() {
         }`}
       >
         <div className="bg-[#27272A] text-white px-1 py-1 rounded-xl shadow-lg flex gap-2">
-          {["Home", "Projects", "Resume", "Contact"].map((item) => (
+          {Object.entries(t.navbar).map(([key, label]) => (
             <span
-              key={item}
-              onClick={() => handleNavigation(`/${item.toLowerCase()}`)}
+              key={key}
+              onClick={() => handleNavigation(`/${key.toLowerCase()}`)}
               className={`cursor-pointer py-2 px-4 transition-all duration-300 ease-in-out rounded-lg ${
-                activeItem === `/${item.toLowerCase()}`
+                activeItem === `/${key.toLowerCase()}`
                   ? "bg-[#3a3a3d] font-[Inter] font-bold shadow-xl"
                   : "text-gray-400 font-[Inter] font-semibold text-sm hover:shadow-xl"
               }`}
             >
-              {item}
+              {label}
             </span>
           ))}
         </div>
@@ -135,7 +135,7 @@ export default function Home() {
             }`}
           >
             <h2 className="text-3xl font-bold pb-6 text-white font-[Inter] mb-4">
-              Technologies I have worked with
+              {t.title.technologies}
             </h2>
             <div className="grid grid-cols-4 gap-6 text-center">
               {[
@@ -188,22 +188,18 @@ export default function Home() {
           >
             <h2 className="text-3xl font-extrabold mb-4">Education</h2>
             <p className="text-[#e0e1dd] text-xl inline font-sans mb-4 pt-6">
-              <span className="font-bold">
-                ESPRIT: Private Higher School of Engineering and Technologies
-              </span>{" "}
-              (2021-2024)
+              <span className="font-bold">{t.education.esprit.name}</span>{" "}
+              {t.education.esprit.period}
             </p>
             <p className="text-lg text-gray-400 font-sans mb-4">
-              National Engineering Degree in Computer Science
+              {t.education.esprit.degree}
             </p>
             <p className="text-[#e0e1dd] text-xl inline font-sans mb-4">
-              <span className="font-bold">
-                Faculty of Economic Sciences and Management of Tunis
-              </span>{" "}
-              (2018-2021)
+              <span className="font-bold">{t.education.esprit.name}</span>{" "}
+              {t.education.esprit.period}
             </p>
             <p className="text-lg text-gray-400 font-sans">
-              Bachelor of Science in Management Information Systems
+              {t.education.esprit.degree}
             </p>
           </div>
 
@@ -238,7 +234,7 @@ export default function Home() {
 
           {/* About Section */}
           <div className="bg-[#18181B] p-6 rounded-xl shadow-lg">
-            <h1 className="text-4xl font-bold mb-4"> {t.about.whoAmI} ?</h1>
+            <h1 className="text-4xl font-bold mb-4"> {t.about.whoAmI} </h1>
             <p className="text-gray-400 leading-relaxed text-lg">
               {t.about.description}
             </p>
@@ -272,22 +268,18 @@ export default function Home() {
           >
             <h2 className="text-3xl font-extrabold mb-4">Education</h2>
             <p className="text-[#e0e1dd] text-xl inline font-sans mb-4 pt-6">
-              <span className="font-bold">
-                ESPRIT: Private Higher School of Engineering and Technologies
-              </span>{" "}
-              (2021-2024)
+              <span className="font-bold">{t.education.esprit.name}</span>{" "}
+              {t.education.esprit.period}
             </p>
             <p className="text-lg text-gray-400 font-sans mb-4">
-              National Engineering Degree in Computer Science
+              {t.education.esprit.degree}
             </p>
             <p className="text-[#e0e1dd] text-xl inline font-sans mb-4">
-              <span className="font-bold">
-                Faculty of Economic Sciences and Management of Tunis
-              </span>{" "}
-              (2018-2021)
+              <span className="font-bold">{t.education.esprit.name}</span>{" "}
+              {t.education.esprit.period}
             </p>
             <p className="text-lg text-gray-400 font-sans">
-              Bachelor of Science in Management Information Systems
+              {t.education.esprit.degree}
             </p>
           </div>
         </div>

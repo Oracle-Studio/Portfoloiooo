@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation"; // Import usePathname
 import { Inter } from "next/font/google";
+import enTranslations from "../locales/en/common.json";
+import frTranslations from "../locales/fr/common.json";
 
 const InterFont = Inter({
   subsets: ["latin"],
@@ -14,6 +16,9 @@ export default function Contact() {
   const [activeItem, setActiveItem] = useState("");
 
   const [isScrolled, setIsScrolled] = useState(false); // Track if the page is scrolled
+
+  const locale = pathname.split("/")[1] || "en";
+  const t = locale === "fr" ? frTranslations : enTranslations;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,8 +37,9 @@ export default function Contact() {
   }, [pathname]);
 
   const handleNavigation = (path: string) => {
-    setActiveItem(path); // Update active item when a menu is clicked
-    router.push(path); // Navigate to the clicked menu item path
+    const newPath = `/${locale}${path}`; // Include locale in the navigation
+    setActiveItem(newPath);
+    router.push(newPath);
   };
 
   return (
@@ -47,17 +53,17 @@ export default function Contact() {
         }`}
       >
         <div className="bg-[#27272A] text-white px-1 py-1 rounded-xl shadow-lg flex gap-2">
-          {["Home", "Projects", "Resume", "Contact"].map((item) => (
+          {Object.entries(t.navbar).map(([key, label]) => (
             <span
-              key={item}
-              onClick={() => handleNavigation(`/${item.toLowerCase()}`)}
+              key={key}
+              onClick={() => handleNavigation(`/${key.toLowerCase()}`)}
               className={`cursor-pointer py-2 px-4 transition-all duration-300 ease-in-out rounded-lg ${
-                activeItem === `/${item.toLowerCase()}`
-                  ? "bg-[#3a3a3d] font-[Inter] font-bold shadow-xl"
-                  : "text-gray-400 font-[Inter] font-semibold text-sm hover:shadow-xl"
+                activeItem === `/${locale}/${key.toLowerCase()}` // Match full path
+                  ? "bg-[#3a3a3d] font-bold shadow-xl"
+                  : "text-gray-400 font-semibold hover:shadow-xl"
               }`}
             >
-              {item}
+              {label}
             </span>
           ))}
         </div>
@@ -124,9 +130,7 @@ export default function Contact() {
                 <h1 className="text-3xl font-bold  text-white">
                   GitHub Profile
                 </h1>
-                <p className="text-xl mt-1 text-gray-400">
-                  Find more of my repositories
-                </p>
+                <p className="text-xl mt-1 text-gray-400">{t.contactGithub}</p>
               </div>
             </div>
           </a>

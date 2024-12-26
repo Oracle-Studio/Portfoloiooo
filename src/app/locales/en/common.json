@@ -1,10 +1,16 @@
 {
+  "Resume": {
+    "View": "View Resume",
+    "Download": "Download Resume"
+  },
   "navbar": {
     "home": "Home",
     "projects": "Projects",
     "resume": "Resume",
     "contact": "Contact"
   },
+  "cvRep": "/Resume_Mondherbenhajammar.pdf",
+  "contactGithub": "Find more of my repositories",
   "about": {
     "whoAmI": "Who am I?",
     "description": "I’m Mondher ben haj ammar, a technology enthusiast with a passion for tackling complex problems through innovative solutions. With hands-on experience in programming, software development, and data structures, I’ve built a strong foundation in creating scalable systems. My journey has been shaped by projects, hackathons, and internships, fueling my interest in the real-world impact of technology. I thrive in collaborative environments, embrace challenges, and stay ahead of emerging trends, driven by a commitment to making a meaningful impact and leading technological transformation."
@@ -36,5 +42,92 @@
     "tailwindcss": "Tailwind CSS",
     "firebase": "Firebase",
     "mongodb": "MongoDB"
-  }
+  },
+  "projects": [
+    {
+      "name": "Madidou Real Estate Rental Mobile Application",
+      "description": "Developed a secure and innovative platform for real estate rentals using Flutter, Node.js, and Firebase. Focused on designing user interfaces, backend development, and cloud deployment to ensure scalability and reliability.",
+      "techStack": [
+        { "name": "flutter", "label": "Flutter" },
+        { "name": "nodejs", "label": "Node.js" },
+        { "name": "firebase", "label": "Firebase" },
+        { "name": "javascript", "label": "JS" },
+        { "name": "typescript", "label": "TS" }
+      ],
+      "image": "/Imagenature.webp",
+      "link": "https://example.com/project1",
+      "githubLink": "https://github.com/your-repo1",
+      "video": "https://dl.dropboxusercontent.com/scl/fi/3jlgzfsg2tdecmo2eg5lk/Projet1video.mp4?rlkey=kib3yu3cbhxt506slz2j9v9wh&st=3shcvg86&dl=0",
+      "post": "Projet1post.png",
+      "comingSoon": true,
+      "logo": "devicon-flutter-plain"
+    },
+    {
+      "name": "Taxis Freressok Drivers Management System",
+      "description": "Taxis Freressok is a driver management platform using Next.js, Node.js, Firebase, and Twilio. It streamlines operations with real-time notifications, course management, and secure authentication, ensuring efficiency and scalability.",
+
+      "techStack": [
+        { "name": "nextjs", "label": "Next.js" },
+        { "name": "nodejs", "label": "Node.js" },
+        { "name": "firebase", "label": "Firebase" },
+        { "name": "javascript", "label": "JS" },
+        { "name": "typescript", "label": "TS" }
+      ],
+      "image": "/photo.webp",
+      "link": "https://taxisfreressok.com/",
+      "githubLink": "https://github.com/your-repo2",
+      "video": "https://dl.dropboxusercontent.com/scl/fi/d28wv2my7lb23ba1h94hq/Projectvideo2.mp4?rlkey=w892obf4qmevuhnru4e2tm2ey&st=9bx72xtl&dl=0",
+      "post": "Projet2post.png",
+      "comingSoon": false,
+      "logo": "devicon-nextjs-plain"
+    },
+    {
+      "name": "DevOps Mobile Platform",
+      "description": "Created a mobile platform for continuous integration and deployment (CI/CD) of applications using React.js, Node.js, and GitHub Actions. Focused on automated processes, testing, and documentation for maintenance and future updates.",
+      "techStack": [
+        { "name": "nextjs", "label": "Next.js" },
+        { "name": "nodejs", "label": "Node.js" },
+        { "name": "firebase", "label": "Firebase" },
+        { "name": "javascript", "label": "JS" },
+        { "name": "typescript", "label": "TS" }
+      ],
+
+      "image": "/Imagenature.webp",
+      "link": "https://example.com/project3",
+      "githubLink": "https://github.com/your-repo3",
+      "video": "https://dl.dropboxusercontent.com/scl/fi/9m3esokk0xze8e1lhqwns/Projetvideo3.mp4?rlkey=2aru58u7s2jkx9x3x9nhuc8pq&st=sghqx1vw&dl=0",
+      "post": "Projet3post.png",
+      "comingSoon": true,
+      "logo": "devicon-react-original"
+    },
+    {
+      "name": "My Portfolio Website",
+      "description": "Built a responsive and interactive portfolio website using Next.js, JavaScript, and TypeScript, showcasing skills, projects, and achievements with optimized performance and modern design.",
+      "techStack": [
+        { "name": "nextjs", "label": "Next.js" },
+        { "name": "javascript", "label": "Js" },
+        { "name": "typescript", "label": "TS" }
+      ],
+      "image": "/Imagenature.webp",
+      "link": "https://portfoloiooo-kappa.vercel.app/",
+      "githubLink": "https://github.com/your-repo4",
+      "video": "https://dl.dropboxusercontent.com/scl/fi/0274z9e1f0a2kdra8gmc6/Videoprojectportfolio.mp4?rlkey=uqp6urt2p45qe3f86ksk67xp5&st=eghnmcqo&dl=0",
+      "post": "ProjetPortfolio.png",
+      "comingSoon": false,
+      "logo": "devicon-nextjs-plain"
+    },
+    {
+      "name": "Java EE Leave Management Application",
+      "description": "Built an application for managing leave requests, approvals, and tracking using Java EE and JavaServer Faces (JSF). Worked on user interface design, backend logic, and user training for system adoption.",
+
+      "techStack": [{ "name": "java", "label": "Java EE" }],
+      "image": "/Imagenature.webp",
+      "link": "https://example.com/project5",
+      "githubLink": "https://github.com/your-repo5",
+      "video": "https://dl.dropboxusercontent.com/scl/fi/qbwvdzn34izdx5860c1vh/Project4.mp4?rlkey=78pw7g158j5k52oaaqew6887k&st=78tuv6d2&dl=0",
+      "post": "Projet4post.png",
+      "comingSoon": true,
+      "logo": "devicon-java-plain"
+    }
+  ]
 }
