@@ -111,7 +111,8 @@ export default function Home() {
             }`}
           >
             <h2 className="text-3xl font-[Inter] font-bold">
-              Full Stack Developer
+              {t.title.fullStackDeveloper}{" "}
+              {/* Dynamic text from translations */}
             </h2>
           </div>
 
@@ -135,11 +136,11 @@ export default function Home() {
 
           {/* Technologies */}
           <div
-            className={`col-span-2 row-span-2 h-80 bg-[#18181B] p-6 rounded-xl mb-7 shadow-lg ${
+            className={`col-span-2 row-span-2 h-96 bg-[#18181B] p-6 rounded-xl mb-7 shadow-lg ${
               isBrowser ? "animate-card-left" : ""
             }`}
           >
-            <h2 className="text-3xl font-bold pb-6 text-white font-[Inter] mb-4">
+            <h2 className="text-3xl font-bold pb-8 text-white font-[Inter] mb-4">
               {t.title.technologies}
             </h2>
             <div className="grid grid-cols-4 gap-6 text-center">
