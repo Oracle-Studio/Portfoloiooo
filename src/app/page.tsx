@@ -2,21 +2,36 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-import { useRouter } from "next/navigation"; // Import usePathname
+import { useRouter, usePathname } from "next/navigation"; // Import usePathname
 import enTranslations from "./locales/en/common.json";
 import frTranslations from "./locales/fr/common.json";
 
 export default function Home() {
   const router = useRouter();
+  const pathname = usePathname(); // Get the current pathname
   const [isScrolled, setIsScrolled] = useState(false); // Track if the page is scrolled
   const [activeItem, setActiveItem] = useState("");
   const [isBrowser, setIsBrowser] = useState(false);
-  const [locale] = useState<string>("en"); // Default to English
+  const [locale, setLocale] = useState<string>("en"); // Default to English
 
   const t = locale === "fr" ? frTranslations : enTranslations;
 
+  useEffect(() => {
+    // Detect user's language
+    const userLanguage = navigator.language; // Use navigator.language for modern browsers
+    const detectedLocale = userLanguage.startsWith("fr") ? "fr" : "en";
+
+    // Set locale based on detection
+    setLocale(detectedLocale);
+
+    // Redirect to the detected language route if not already on it
+    if (!window.location.pathname.startsWith(`/${detectedLocale}`)) {
+      router.push(`/${detectedLocale}`);
+    }
+  }, [router]);
+
   const handleNavigation = (path: string) => {
-    const newPath = `/${path}`;
+    const newPath = `/${locale}${path}`;
     setActiveItem(newPath);
     router.push(newPath);
   };

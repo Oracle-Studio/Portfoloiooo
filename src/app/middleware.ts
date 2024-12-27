@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 const supportedLocales = ["en", "fr"];
-const defaultLocale = "en"; // Default fallback locale
+const defaultLocale = "en"; // Must match `defaultLocale` in next.config.ts
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -17,7 +17,6 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Check if the user is already in a locale path (e.g., /en or /fr)
   const segments = pathname.split("/");
   const currentLocale = segments[1];
 
@@ -25,23 +24,17 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Handle the root path `/` specifically
-  if (pathname === "/") {
-    const acceptLanguage = request.headers.get("accept-language");
-    const detectedLocale = acceptLanguage
-      ? acceptLanguage.split(",")[0].split("-")[0] // Extract the primary language
-      : defaultLocale;
+  const acceptLanguage = request.headers.get("accept-language");
+  const detectedLocale = acceptLanguage
+    ? acceptLanguage.split(",")[0].split("-")[0]
+    : defaultLocale;
 
-    const localeToUse = supportedLocales.includes(detectedLocale)
-      ? detectedLocale
-      : defaultLocale;
+  const localeToUse = supportedLocales.includes(detectedLocale)
+    ? detectedLocale
+    : defaultLocale;
 
-    // Redirect to the appropriate locale
-    const redirectUrl = new URL(`/${localeToUse}`, request.url);
-    return NextResponse.redirect(redirectUrl);
-  }
-
-  return NextResponse.next();
+  const redirectUrl = new URL(`/${localeToUse}${pathname}`, request.url);
+  return NextResponse.redirect(redirectUrl);
 }
 
 export const config = {
