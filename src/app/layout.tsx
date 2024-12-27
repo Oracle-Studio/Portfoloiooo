@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html className={`${inter.variable}`}>
       <head>
         {/* Add the Devicon CSS link */}
         <link
