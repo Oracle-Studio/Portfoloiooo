@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 
 export const metadata = {
   title: "Mondher ben haj ammar ",
@@ -12,16 +14,15 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-export default function LanguageLayout({
+export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: { lang: string }; // If you're confident this is correct
 }) {
   return (
-    <html lang={params.lang} className={`${inter.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <head>
+        {/* Add the Devicon CSS link */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
