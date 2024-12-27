@@ -2,17 +2,16 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-import { useRouter, usePathname } from "next/navigation"; // Import usePathname
+import { useRouter } from "next/navigation"; // Import usePathname
 import enTranslations from "./locales/en/common.json";
 import frTranslations from "./locales/fr/common.json";
 
 export default function Home() {
   const router = useRouter();
-  const pathname = usePathname(); // Get the current pathname
   const [isScrolled, setIsScrolled] = useState(false); // Track if the page is scrolled
   const [activeItem, setActiveItem] = useState("");
   const [isBrowser, setIsBrowser] = useState(false);
-  const [locale, setLocale] = useState<string>("en"); // Default to English
+  const [locale] = useState<string>("en"); // Default to English
 
   const t = locale === "fr" ? frTranslations : enTranslations;
 
