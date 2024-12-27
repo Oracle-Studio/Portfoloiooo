@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Inter } from "next/font/google";
 import { FaDownload, FaEye, FaExpand } from "react-icons/fa"; // Import icons
-import enTranslations from "../locales/en/common.json";
-import frTranslations from "../locales/fr/common.json";
+import enTranslations from "../../locales/en/common.json";
+import frTranslations from "../../locales/fr/common.json";
 
 const InterFont = Inter({
   subsets: ["latin"],

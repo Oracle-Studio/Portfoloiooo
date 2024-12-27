@@ -14,13 +14,17 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-export default function RootLayout({
+export default function LanguageLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
+  const { lang } = params;
+
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang={lang} className={`${inter.variable}`}>
       <head>
         {/* Add the Devicon CSS link */}
         <link

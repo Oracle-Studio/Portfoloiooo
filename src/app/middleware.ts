@@ -1,46 +1,42 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+const supportedLocales = ["en", "fr"];
+const defaultLocale = "en"; // Must match `defaultLocale` in next.config.ts
+
 export function middleware(request: NextRequest) {
-  const { nextUrl } = request;
+  const { pathname } = request.nextUrl;
 
-  // Extract the "Accept-Language" header from the user's request
+  // Skip API routes, Next.js internals, and static files
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/static") ||
+    pathname.includes(".")
+  ) {
+    return NextResponse.next();
+  }
+
+  const segments = pathname.split("/");
+  const currentLocale = segments[1];
+
+  if (supportedLocales.includes(currentLocale)) {
+    return NextResponse.next();
+  }
+
   const acceptLanguage = request.headers.get("accept-language");
-  console.log("Accept-Language header:", acceptLanguage); // Debugging line
-
-  const userLanguage = acceptLanguage?.split(",")[0]?.split("-")[0]; // Extract primary language
-  console.log("User language:", userLanguage); // Debugging line
-
-  const supportedLocales = ["en", "fr"]; // Define supported locales
-  const defaultLocale = "en"; // Default fallback language
-
-  // Determine the appropriate locale
-  const locale = supportedLocales.includes(userLanguage || "")
-    ? userLanguage
+  const detectedLocale = acceptLanguage
+    ? acceptLanguage.split(",")[0].split("-")[0]
     : defaultLocale;
 
-  console.log("Selected locale:", locale); // Debugging line
+  const localeToUse = supportedLocales.includes(detectedLocale)
+    ? detectedLocale
+    : defaultLocale;
 
-  const cleanPathname = nextUrl.pathname.replace(/\/$/, ""); // Remove trailing slash
-  if (!cleanPathname.startsWith(`/${locale}`)) {
-    const redirectUrl = new URL(`/${locale}${cleanPathname}`, request.url);
-    console.log("Redirecting to:", redirectUrl.toString()); // Debugging line
-    return NextResponse.redirect(redirectUrl);
-  }
-
-  // If the locale is not already in the URL, redirect to the correct locale
-  if (!nextUrl.pathname.startsWith(`/${locale}`)) {
-    const redirectUrl = new URL(`/${locale}${cleanPathname}`, request.url);
-    redirectUrl.search = nextUrl.search; // Preserve query parameters
-
-    console.log("Redirecting to:", redirectUrl.toString()); // Debugging line
-    return NextResponse.redirect(redirectUrl);
-  }
-
-  return NextResponse.next();
+  const redirectUrl = new URL(`/${localeToUse}${pathname}`, request.url);
+  return NextResponse.redirect(redirectUrl);
 }
 
-// Apply middleware to all routes except static files and API routes
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|api/).*)"],
+  matcher: "/((?!api|_next/static|_next/image|favicon.ico).*)",
 };

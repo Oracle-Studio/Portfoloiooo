@@ -26,15 +26,15 @@ export default function Home() {
 
     // Redirect to the detected language route if not already on it
     if (!window.location.pathname.startsWith(`/${detectedLocale}`)) {
-      router.push(`/${detectedLocale}`);
+      router.push(`/${detectedLocale}${window.location.pathname}`);
     }
   }, [router]);
 
-  // Update activeItem when the path changes
-
-  useEffect(() => {
-    console.log("Pathname changed:", pathname);
-  }, [pathname]);
+  const handleNavigation = (path: string) => {
+    const newPath = `/${locale}${path}`;
+    setActiveItem(newPath);
+    router.push(newPath);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,11 +46,6 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const handleNavigation = (path: string) => {
-    setActiveItem(path); // Update active item when a menu is clicked
-    router.push(path); // Navigate to the clicked menu item path
-  };
 
   useEffect(() => {
     setIsBrowser(true);

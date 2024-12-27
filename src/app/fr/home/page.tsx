@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { useRouter, usePathname } from "next/navigation"; // Import usePathname
-import enTranslations from "./locales/en/common.json";
-import frTranslations from "./locales/fr/common.json";
+import enTranslations from "../../locales/en/common.json";
+import frTranslations from "../../locales/fr/common.json";
 
 export default function Home() {
   const router = useRouter();
@@ -15,6 +15,20 @@ export default function Home() {
   const [locale, setLocale] = useState<string>("en"); // Default to English
 
   const t = locale === "fr" ? frTranslations : enTranslations;
+
+  useEffect(() => {
+    // Detect user's language
+    const userLanguage = navigator.language; // Use navigator.language for modern browsers
+    const detectedLocale = userLanguage.startsWith("fr") ? "fr" : "en";
+
+    // Set locale based on detection
+    setLocale(detectedLocale);
+
+    // Redirect to the detected language route if not already on it
+    if (!window.location.pathname.startsWith(`/${detectedLocale}`)) {
+      router.push(`/${detectedLocale}${window.location.pathname}`);
+    }
+  }, [router]);
 
   const handleNavigation = (path: string) => {
     const newPath = `/${locale}${path}`;

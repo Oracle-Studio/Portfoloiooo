@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation"; // Import usePathname
 import { Inter } from "next/font/google";
-import enTranslations from "../locales/en/common.json";
-import frTranslations from "../locales/fr/common.json";
+import enTranslations from "../../locales/en/common.json";
+import frTranslations from "../../locales/fr/common.json";
 
 const InterFont = Inter({
   subsets: ["latin"],
