@@ -17,14 +17,11 @@ export default function LanguageLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: { lang: string }; // If you're confident this is correct
 }) {
-  const { lang } = params;
-
   return (
-    <html lang={lang} className={`${inter.variable}`}>
+    <html lang={params.lang} className={`${inter.variable}`}>
       <head>
-        {/* Add the Devicon CSS link */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
