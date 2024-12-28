@@ -290,7 +290,7 @@ export default function EnglishHomePage() {
             </p>
             <p className="text-[#e0e1dd] text-xl inline font-sans mb-4">
               <span className="font-bold">{t.education.esprit.name}</span>{" "}
-              {t.education.esprit.period}
+              <br /> {t.education.esprit.period}
             </p>
             <p className="text-lg text-gray-400 font-sans">
               {t.education.esprit.degree}

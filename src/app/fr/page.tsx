@@ -283,13 +283,14 @@ export default function Home() {
             <h2 className="text-3xl font-extrabold mb-4">Education</h2>
             <p className="text-[#e0e1dd] text-xl inline font-sans mb-4 pt-6">
               <span className="font-bold">{t.education.esprit.name}</span>{" "}
+              <br />
               {t.education.esprit.period}
             </p>
             <p className="text-lg text-gray-400 font-sans mb-4">
               {t.education.esprit.degree}
             </p>
             <p className="text-[#e0e1dd] text-xl inline font-sans mb-4">
-              <span className="font-bold">{t.education.fesmt.name}</span>{" "}
+              <span className="font-bold">{t.education.fesmt.name}</span> <br />
               {t.education.fesmt.period}
             </p>
             <p className="text-lg text-gray-400 font-sans">
