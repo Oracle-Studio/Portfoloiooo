@@ -79,9 +79,9 @@ export default function Portfolio() {
       </nav>
 
       {/* Projects Section */}
-      <section id="portfolio" className="max-w-6xl mt-32">
+      <section id="portfolio" className="max-w-6xl mt-32  ">
         {/* Desktop Layout */}
-        <div className="hidden md:grid grid-cols-1 gap-4 sm:gap-24">
+        <div className="hidden md:grid grid-cols-1 gap-4 sm:gap-24 mb-32 ">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -194,7 +194,7 @@ export default function Portfolio() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="md:hidden flex flex-col gap-14">
+        <div className="md:hidden flex flex-col gap-14 mb-20">
           {projects.map((project, index) => (
             <div key={index} className="bg-black rounded-2xl shadow-2xl p-4">
               <div className="flex items-center mb-6">
