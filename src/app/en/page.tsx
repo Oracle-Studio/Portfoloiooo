@@ -210,7 +210,8 @@ export default function Home() {
               {t.education.esprit.degree}
             </p>
             <p className="text-[#e0e1dd] text-xl inline font-sans mb-4">
-              <span className="font-bold">{t.education.fesmt.name}</span> <br />
+              <span className="font-bold">{t.education.fesmt.name}</span>
+              <br />
               {t.education.fesmt.period}
             </p>
             <p className="text-lg text-gray-400 font-sans">
@@ -290,11 +291,11 @@ export default function Home() {
               {t.education.esprit.degree}
             </p>
             <p className="text-[#e0e1dd] text-xl inline font-sans mb-4">
-              <span className="font-bold">{t.education.esprit.name}</span>{" "}
-              {t.education.esprit.period}
+              <span className="font-bold">{t.education.fesmt.name}</span> <br />
+              {t.education.fesmt.period}
             </p>
             <p className="text-lg text-gray-400 font-sans">
-              {t.education.esprit.degree}
+              {t.education.fesmt.degree}
             </p>
           </div>
         </div>
